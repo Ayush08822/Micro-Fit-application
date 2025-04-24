@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: "AIService"
+  config:
+    import: "configserver:http://localhost:8071/"
+
+gemini:
+  api:
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=
+    key: AIzaSyCf_LBQfFcIYdaXo99HJ3QCrsuEFMQRwvM

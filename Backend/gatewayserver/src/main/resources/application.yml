@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "configserver:http://localhost:8071/"
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://localhost:7080/realms/FitnessApp/protocol/openid-connect/certs"

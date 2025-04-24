@@ -1,0 +1,35 @@
+server:
+  port: 8090
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/fitnessactivity"
+      database: "fitnessactivity"
+  cloud:
+    stream:
+      bindings:
+        sendFitnessDetails-out-0:
+          destination: send-fitness-details
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka"
+
+logging:
+  level:
+    com:
+      AyushToCode:
+        ActivityService: DEBUG
+
+#mongodb://localhost:27017
